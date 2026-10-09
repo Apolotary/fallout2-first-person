@@ -5,7 +5,7 @@ copy of the game and builds scenes for a small WebGL 2 viewer. You can walk arou
 look at objects, change the lighting, and switch to isometric or overhead views.
 Combat, dialogue, inventory, and game scripts are not simulated.
 
-**No game data is included.** You need your own legally bought, English-language
+**No playable game assets are included.** You need your own legally bought, English-language
 copy of Fallout 2. Textures, maps, fonts, and descriptions are generated locally
 from that copy. Do not upload generated files to this repository or a public server.
 
@@ -13,6 +13,19 @@ This is an unofficial fan project. It is not made, endorsed or supported by Beth
 Softworks, ZeniMax Media, Interplay or anyone else who holds rights in Fallout.
 Fallout, Fallout 2, Fallout 3 and all related names, characters, places and art
 belong to their owners.
+
+## Screenshots
+
+Klamath: Downtown in first person, with the desktop interface.
+
+![Klamath: Downtown in first person.](docs/screenshots/klamath-desktop.png)
+
+Vault City with touch controls, captured using a desktop browser's phone emulation.
+
+![Vault City with touch controls.](docs/screenshots/vault-city-touch.png)
+
+These screenshots show scenes generated from a locally supplied copy of Fallout 2.
+The game artwork shown belongs to its respective rights holders.
 
 ## Requirements
 
@@ -134,7 +147,8 @@ requires ffmpeg. They need the viewer server to be running, and write their
 outputs into ignored folders. They are not part of the installation check above.
 
 Keep generated data out of commits. `game/`, `viewer/data/`, `viewer/hud/`, `run/`,
-and image files are ignored. A source-only repository is intentional.
+and generated image files are ignored. The two reviewed README screenshots are
+the only image exceptions.
 
 ## Remove
 
@@ -152,6 +166,7 @@ The project is free and non-commercial. The code uses the
 in [LICENSE-fallout2-ce.md](LICENSE-fallout2-ce.md). See [NOTICE.md](NOTICE.md) for
 attribution and modification details.
 
-The repository contains no data files of any Fallout game: no art, maps, sound,
-text tables, or executables. Everything derived from your game is produced on your
-computer from your own copy. Please do not share those files here or elsewhere.
+Game archives, exported scene assets, fonts, sound, text tables, and executables
+are not included. Build the viewer scenes locally from your own game copy and keep
+those generated files local. The documentation screenshots contain game artwork;
+that artwork is not covered by this project's code license.

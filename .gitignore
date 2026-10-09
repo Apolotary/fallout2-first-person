@@ -1,10 +1,10 @@
-# Every game-derived output stays local.
+# Generated game assets stay local.
 /game/
 /viewer/data/
 /viewer/hud/
 /run/
 
-# Game files, generated art, fonts, and media are never repository content.
+# Game files, generated art, fonts, and media stay out of the repository.
 *.[dD][aA][tT]
 *.[fF][rR][mM]
 *.[fF][rR][0-5]
@@ -74,3 +74,7 @@ Thumbs.db
 .env.*
 .idea/
 .vscode/
+
+# Explicitly reviewed documentation screenshots requested by the owner.
+!/docs/screenshots/klamath-desktop.png
+!/docs/screenshots/vault-city-touch.png
