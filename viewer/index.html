@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="theme-color" content="#050805">
+<title>First-person viewer for Fallout 2 maps (unofficial)</title>
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="fp.css">
+</head>
+<body>
+
+<!-- Map picker: shown when the URL names no map (menu.js). -->
+<main id="menu">
+  <header>
+    <div class="unit">A FAN-MADE MAP VIEWER</div>
+    <h1>FIRST-PERSON VIEWER FOR FALLOUT 2 MAPS (UNOFFICIAL)</h1>
+    <div class="prompt" id="prompt">SELECT A PLACE TO WALK</div>
+  </header>
+  <ol id="maps"></ol>
+  <footer>
+    <p>The game's own maps, stood up in 3D from its isometric art. Nothing to fight or pick up: a walk at eye level.</p>
+    <p>Hold the phone in <b>landscape</b>. Added to the home screen, the page runs without browser bars.</p>
+    <p>This is an unofficial fan project, not made, endorsed or supported by Bethesda Softworks, ZeniMax Media, Interplay or other Fallout rights holders. Fallout names, characters, places and art belong to their owners. Use your own legally bought copy of Fallout 2; do not share the generated game files. This project is free and non-commercial.</p>
+  </footer>
+</main>
+
+<!-- The walker (fp.js). Everything of class "hud" lies over the picture and lets touches through. -->
+<div id="walker">
+  <canvas id="view"></canvas>
+  <canvas id="iface" class="hud" width="640" height="99"></canvas>      <!-- the game's interface bar (hud.js) -->
+  <div id="cross" class="hud"></div>
+  <div id="label" class="hud"></div>
+  <div id="debug" class="hud" hidden></div>
+  <div id="log" class="hud panel" hidden></div>
+  <canvas id="plan" class="hud panel" hidden></canvas>
+  <div id="stick" class="hud" hidden><div id="knob"></div></div>
+
+  <nav id="bar" class="hud">
+    <a id="back" class="key" href="./">MAPS</a>
+    <button id="plans" class="key touch-only">MAP</button>
+    <button id="time" class="key touch-only">TIME</button>
+    <button id="pixels" class="key">RETRO</button>
+    <button id="set" class="key">SET</button>
+    <button id="full" class="key touch-only">FULL</button>
+  </nav>
+  <div id="options" class="hud" hidden></div>
+  <div id="pad" class="hud touch-only">
+    <button id="run" class="key">RUN</button>
+    <button id="look" class="key">LOOK</button>
+  </div>
+
+  <div id="help" class="hud keys-only">click to look around &middot; WASD walk &middot; Shift run &middot; E look at &middot; Tab map &middot; T time of day &middot; P retro / smooth &middot; V field of view &middot; H game bar &middot; M game view &middot; F info</div>
+  <div id="rotate" class="hud">ROTATE TO LANDSCAPE</div>
+
+  <!-- Start screen: download progress, then one tap (the gesture pointer lock and fullscreen ask for). -->
+  <div id="overlay">
+    <h1>FALLOUT 2 MAP VIEWER <span>FIRST PERSON (UNOFFICIAL)</span></h1>
+    <div class="sub" id="place">&nbsp;</div>
+    <div id="meter"><div id="fill"></div></div>
+    <div id="status">LOADING</div>
+    <button id="enter" hidden><span class="touch-only">TAP</span><span class="keys-only">CLICK</span> TO ENTER</button>
+    <ul id="howto">
+      <li class="touch-only"><b>Left thumb</b> walk &nbsp;&middot;&nbsp; <b>Right thumb</b> look around &nbsp;&middot;&nbsp; <b>Tap</b> a thing to look at it</li>
+      <li class="touch-only"><b>RUN</b> walk fast &nbsp;&middot;&nbsp; <b>LOOK</b> what is under the cross &nbsp;&middot;&nbsp; <b>MAP</b> plan &nbsp;&middot;&nbsp; <b>TIME</b> day, dusk, night</li>
+      <li class="touch-only"><b>RETRO / SMOOTH</b> the picture &nbsp;&middot;&nbsp; <b>SET</b> field of view, speed, turning, the game's bar</li>
+      <li class="keys-only"><b>WASD</b> walk &nbsp;&middot;&nbsp; <b>Mouse</b> look around &nbsp;&middot;&nbsp; <b>Shift</b> run &nbsp;&middot;&nbsp; <b>E</b> look at &nbsp;&middot;&nbsp; <b>Tab</b> plan &nbsp;&middot;&nbsp; <b>T</b> time of day</li>
+      <li class="keys-only"><b>P</b> retro or smooth picture &nbsp;&middot;&nbsp; <b>V</b> field of view &nbsp;&middot;&nbsp; <b>H</b> the game's bar &nbsp;&middot;&nbsp; <b>Esc</b> frees the mouse &nbsp;&middot;&nbsp; <b>M</b> the game's own view</li>
+    </ul>
+    <a id="leave" href="./">&lt; ALL MAPS</a>
+  </div>
+</div>
+
+<script type="module" src="fp.js"></script>
+</body>
+</html>

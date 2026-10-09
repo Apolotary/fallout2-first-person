@@ -1,0 +1,4 @@
+# Installed in the release verification environment (Python 3.14.6).
+# Fresh-copy export and desktop Chrome smoke check passed on 2026-10-09.
+numpy==2.5.3
+Pillow==12.3.0
